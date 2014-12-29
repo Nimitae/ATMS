@@ -8,9 +8,7 @@ if (isset($_POST["worldName"]) && !empty($_POST["worldName"])) {
     $worldDAO->insertWorld($_POST["worldName"]);
 }
 
-
 $worldContainer = $worldDAO->getAllWorlds();
-$_POST=array();
 ?>
 
 <!DOCTYPE html>
