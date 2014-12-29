@@ -11,10 +11,11 @@
         </div>
         <div class="navbar-collapse collapse navbar-right">
             <ul class="nav navbar-nav">
+                <li><a href="worlds.php">Worlds</a></li>
                 <li><a href="maps.php">Maps</a></li>
-                <li><a href="">Stub</a></li>
+                <li><a href="channels.php">Channels</a></li>
+                <li><a href="tracking.php">Tracking</a></li>
             </ul>
         </div>
-        <!--/.nav-collapse -->
     </div>
 </div>

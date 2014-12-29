@@ -1,6 +1,11 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+    <?php include('partials/header.partial.php'); ?>
+</head>
+<body>
+<?php include('partials/navbar.partial.php'); ?>
 
 
-
-
-include("index.view.php");
+</body>
+</html>
