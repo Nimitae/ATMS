@@ -91,8 +91,10 @@ $trackingContainer = $trackingDAO->getAllTrackings();
                 <td style="text-align: center"><?php print $vanishTime ;?></td>
                 <td style="text-align: center"><?php print $curCount ;?></td>
                 <td style="text-align: center"><?php print $remaining ;?></td>
-                <td style="text-align: center"><?php print $state ;?></td>
-                <td style="text-align: center"><?php print $state ;?></td>
+                <td style="text-align: center"><form action="index.php" method="post"><input type="hidden" name="spawnAction" value="<?php print $worldID . "-". $channelNumber . "-" . $mapID; ?>"><input type="submit" value="Spawned"></form></td>
+                <td style="text-align: center"><form action="index.php" method="post"><input type="hidden" name="stage1" value="<?php print $worldID . "-". $channelNumber . "-" . $mapID; ?>"><input type="submit" value="Stage 1"></form>
+
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
