@@ -15,7 +15,7 @@ class Map
     public static function create($mapID, $mapName)
     {
         if (!isset(self::$idList[$mapID])) {
-            self::$idList[$mapID] = new World($mapID, $mapName);
+            self::$idList[$mapID] = new Map($mapID, $mapName);
         }
         return self::$idList[$mapID];
     }
@@ -30,14 +30,14 @@ class Map
         return $this->mapName;
     }
 
-    public function setMapID($worldID)
+    public function setMapID($mapID)
     {
-        $this->mapID = $worldID;
+        $this->mapID = $mapID;
     }
 
-    public function setMapName($worldName)
+    public function setMapName($mapName)
     {
-        $this->mapName = $worldName;
+        $this->mapName = $mapName;
     }
 
 }

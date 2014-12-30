@@ -20,22 +20,22 @@ $worldContainer = $worldDAO->getAllWorlds();
 <?php include('partials/navbar.partial.php'); ?>
 <div class="container">
     <div class="col-sm-6 col-md-offset-3">
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered">
             <thead>
-            <th style="text-align: center">WorldID</th>
-            <th style="text-align: center">WorldName</th>
+            <th style="width:10%;text-align: center">WorldID</th>
+            <th style="width: 90%;">WorldName</th>
             </thead>
             <?php foreach ($worldContainer as $world) : ?>
                 <tr>
                     <td style="text-align: center"><?php print $world->getWorldID() ?></td>
-                    <td style="text-align: center"><?php print $world->getWorldName() ?></td>
+                    <td><?php print $world->getWorldName() ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
         <hr>
         <form class="pull-right" action="worlds.php" method="post">
             <input type="text" placeholder="World Name" name="worldName">
-            <input type="submit">
+            <input type="submit" value="Add">
         </form>
     </div>
 </div>

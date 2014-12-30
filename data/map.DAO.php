@@ -1,16 +1,16 @@
 <?php
 require_once("class/map.class.php");
 
-class MapDAO
+class mapDAO
 {
     public function getAllMaps()
     {
         $sqlQuery = "SELECT * FROM map;";
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
         $queryResultSet = $dbh->query($sqlQuery);
-        $ticketResults = $queryResultSet->fetchAll(PDO::FETCH_ASSOC);
+        $mapResults = $queryResultSet->fetchAll(PDO::FETCH_ASSOC);
         $mapArray = array();
-        foreach ($ticketResults as $row) {
+        foreach ($mapResults as $row) {
             $newMap = new Map($row["mapID"], $row["mapName"]);
             $mapArray[] = $newMap;
         }

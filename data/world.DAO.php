@@ -8,9 +8,9 @@ class WorldDAO
         $sqlQuery = "SELECT * FROM world;";
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
         $queryResultSet = $dbh->query($sqlQuery);
-        $ticketResults = $queryResultSet->fetchAll(PDO::FETCH_ASSOC);
+        $worldResults = $queryResultSet->fetchAll(PDO::FETCH_ASSOC);
         $worldArray = array();
-        foreach ($ticketResults as $row) {
+        foreach ($worldResults as $row) {
             $newWorld = new World($row["worldID"], $row["worldName"]);
             $worldArray[] = $newWorld;
         }
