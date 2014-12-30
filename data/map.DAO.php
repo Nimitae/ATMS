@@ -29,4 +29,17 @@ class mapDAO
             return false;
         }
     }
+
+    public function getAllMapsArray()
+    {
+        $sqlQuery = "SELECT * FROM map;";
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+        $queryResultSet = $dbh->query($sqlQuery);
+        $mapResults = $queryResultSet->fetchAll(PDO::FETCH_ASSOC);
+        $mapArray = array();
+        foreach ($mapResults as $row) {
+            $mapArray[$row["mapID"]] = $row["mapName"];
+        }
+        return $mapArray;
+    }
 }

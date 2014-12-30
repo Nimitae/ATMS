@@ -29,4 +29,17 @@ class WorldDAO
             return false;
         }
     }
+
+    public function getAllWorldsArray()
+    {
+        $sqlQuery = "SELECT * FROM world;";
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+        $queryResultSet = $dbh->query($sqlQuery);
+        $worldResults = $queryResultSet->fetchAll(PDO::FETCH_ASSOC);
+        $worldArray = array();
+        foreach ($worldResults as $row) {
+            $worldArray[$row["worldID"]] = $row["worldName"];
+        }
+        return $worldArray;
+    }
 }

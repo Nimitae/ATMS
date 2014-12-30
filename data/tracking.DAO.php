@@ -4,7 +4,7 @@ class trackingDAO
 {
     public function getAllTrackings()
     {
-        $sqlQuery = "SELECT * FROM tracking;";
+        $sqlQuery = "SELECT * FROM tracking ORDER BY worldID ASC, mapID ASC, channelNumber ASC;";
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
         $queryResultSet = $dbh->query($sqlQuery);
         $trackingResults = $queryResultSet->fetchAll(PDO::FETCH_ASSOC);
