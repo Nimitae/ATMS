@@ -21,6 +21,16 @@ if (isset($_POST["updateTracking"])) {
             $trackingDAO->insertTracking($worldID, $channelNumber, $mapID);
         }
     }
+
+    foreach ($trackingContainer as $k => $value) {
+        if (!isset($_POST[$k])) {
+            $splitKey = explode("-", $k);
+            $worldID = $splitKey[0];
+            $channelNumber = $splitKey[1];
+            $mapID = $splitKey[2];
+            $trackingDAO->removeTracking($worldID, $channelNumber, $mapID);
+        }
+    }
 }
 $worldContainer = $worldDAO->getAllWorlds();
 $mapContainer = $mapDAO->getAllMaps();

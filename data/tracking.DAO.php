@@ -33,12 +33,12 @@ class trackingDAO
 
     public function removeTracking($worldID, $channelNumber, $mapID)
     {
-        $sqlInsert = "DELETE FROM tracking WHERE mapID = :mapID AND worldID =  :worldID AND channelNumber = :channelNumber);";
+        $sqlInsert = "DELETE FROM tracking WHERE mapID = :mapID AND worldID = :worldID AND channelNumber= :channelNumber;";
         $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
         $stmt = $dbh->prepare($sqlInsert);
-        $stmt->bindParam(':mapID', $worldID);
-        $stmt->bindParam(':worldID', $channelNumber);
-        $stmt->bindParam(':channelNumber', $mapID);
+        $stmt->bindParam(':mapID', $mapID);
+        $stmt->bindParam(':worldID', $worldID);
+        $stmt->bindParam(':channelNumber', $channelNumber);
         if ($stmt->execute()) {
             return true;
         } else {
