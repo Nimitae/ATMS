@@ -2,6 +2,7 @@
 
 class Spawn
 {
+    private $spawnID;
     private $mapID;
     private $worldID;
     private $channelNumber;
@@ -9,8 +10,9 @@ class Spawn
     private $defeat;
     private $result;
 
-    public function __construct($mapID, $worldID, $channelNumber, $start, $defeat, $result)
+    public function __construct($spawnID,$mapID, $worldID, $channelNumber, $start, $defeat, $result)
     {
+        $this->spawnID = $spawnID;
         $this->mapID = $mapID;
         $this->worldID = $worldID;
         $this->start = $start;
@@ -49,6 +51,11 @@ class Spawn
         return $this->result;
     }
 
+    public function getSpawnID()
+    {
+        return $this->spawnID;
+    }
+
     public function setMapID($mapID)
     {
         $this->mapID = $mapID;
@@ -77,5 +84,10 @@ class Spawn
     public function setResult($result)
     {
         $this->result = $result;
+    }
+
+    public function setSpawnID($spawnID)
+    {
+        $this->spawnID = $spawnID;
     }
 }
